@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/validate.css">
+    <title>Validate</title>
+</head>
+
+<body>
+    <div class="container px-4">
+       
+        <div class="row topper">
+            <div class="col-lg-6 leftside">
+                
+                <h1 class="fw-bold" id="greetingText">Learn to code by watching others</h1>
+                <p class="pt-4">See how experienced developers solve problems in real time. Watching scripted
+                    tutorials is great, but understanding how developers think is invaluable.
+                </p>
+                
+            </div>
+            <div class="col-lg-6 rightSide">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 headerError">
+                        <p  id="finalText"><b>Try it free 7 days</b> then $20/mo, thereafter</p>
+                    </div>
+                    
+                    
+                    <div class="col-lg-12 col-md-12 col-sm-12 formBox mt-4">
+                       <div class="row">
+                        <div class="formDesign">
+                            <div class="col-lg-12">
+                                <input type="text" name="" id="userFirstName" class="form-control" placeholder="First Name">
+                                <label for="" id="firstname"  class="fst-italic float-end mb-2 errorText"></label>
+                            </div>
+                            <div class="col-lg-12 pt-4">
+                                <input type="text" name="" id="userLastName" class="form-control" placeholder="Last Name">
+                                <label for="" id="lastname"  class="fst-italic float-end mb-2 errorText"></label>
+                            </div>
+                            <div class="col-lg-12 pt-4">
+                                <input type="email" name="" id="userEmail" class="form-control" placeholder="Email Address">
+                                <label for="" id="email"  class="fst-italic float-end mb-2 errorText"></label>
+                            </div>
+                            <div class="col-lg-12 pt-4">
+                                <input type="password" name="" id="userPassword" class="form-control" placeholder="Password">
+                                <label for="" id="password" class="fst-italic float-end mb-2 errorText"></label>
+                            </div>
+                            <div class="col-lg-12 pt-4">
+                               <button onclick="validation()" class="submitBTN text-uppercase text-center form-control p-2">claim your free trial</button>
+                            </div>
+                            <p class="pt-3 text-center px-5">By clicking the button, you are agreeing to our <code>Terms and Services</code></p>
+                           
+                        </div>
+                       
+                       </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.js" type="text/javascript"></script>
+    <script>
+        function validation(){
+            var firstname = document.getElementById('userFirstName').value;
+            var lastname = document.getElementById('userLastName').value;
+            var email = document.getElementById('userEmail').value;
+            var password = document.getElementById('userPassword').value;
+
+            if(firstname == ''){
+                document.getElementById('firstname').innerHTML = 'FirstName cannot be empty';
+            }
+            else if(firstname != ''){
+                  document.getElementById('firstname').innerHTML = '';
+            }
+            if(lastname == ''){
+                document.getElementById('lastname').innerHTML = 'Last Name cannot be empty';
+            }
+            else if (lastname != ''){
+                document.getElementById('lastname').innerHTML = '';
+            }
+            if(email == ''){
+                document.getElementById('email').innerHTML = 'Email is required';
+            }
+            else if(email != ''){
+                document.getElementById('email').innerHTML = '';
+            }
+            if(password == ''){
+                document.getElementById('password').innerHTML = 'Password cannot be empty';
+            }
+            else if(password != ''){
+                document.getElementById('password').innerHTML = '';
+            }
+
+
+            if(firstname == '' || lastname == '' || email == '' || password == ''){
+                document.getElementById('finalText').innerHTML = 'Kindly Fill all the required'
+            } 
+            else if(firstname != '' && lastname != '' && email != '' && password != ''){
+                document.getElementById('finalText').innerHTML = 'You are Good to Go'
+                document.getElementById('greetingText').innerHTML = "Hello " + firstname
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>

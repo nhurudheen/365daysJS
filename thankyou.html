@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/css/rating.css"/>
+    <title>THANK YOU</title>
+</head>
+<body class="bg-dark-dark-blue">
+        <div class="container bg-dark-blue p-4 white-color text-center">
+                <img src="assets//images/illustration-thank-you.svg" height="80px"> <br>
+                <p class=" mt-4"> <span class="result">You selected <span id="userChoice"></span> out of 5</span></p>
+            <p class="fs-4 pt-2 white-color fw-bold"> Thank You!</p>
+            
+            <p class="feedbackText">We appreciate you for taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!
+            </p>
+          
+        </div>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script>
+       var userAnswer = localStorage.getItem("userAnswer");
+       document.getElementById('userChoice').innerHTML = userAnswer;
+    </script>
+</body>
+</html>

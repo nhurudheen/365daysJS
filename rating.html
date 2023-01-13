@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/css/rating.css"/>
+    <title>RATING SYSTEM</title>
+</head>
+<body class="bg-dark-dark-blue">
+        <div class="container bg-dark-blue p-4 white-color">
+                <span class="bg-light-blue star"><img src="assets/images/icon-star.svg"> </span>
+            <p class="fs-4 pt-4 white-color fw-bold"> How did we do?</p>
+            <p class="feedbackText">Please let us know how we did with your support request. All feedback is appreciated
+                to help us improve our offering!
+            </p>
+            <div class="rating d-flex justify-content-between py-3">
+                <input type="radio" name="ratingNumber" id="number1" value="1">
+                <label for="number1" class="numberText bg-light-blue fw-bold"> 1&nbsp;</label>
+                <input type="radio" name="ratingNumber" id="number2" value="2">
+                <label for="number2" class="numberText bg-light-blue fw-bold"> 2</label>
+                <input type="radio" name="ratingNumber" id="number3"value="3">
+                <label for="number3" class="numberText bg-light-blue fw-bold"> 3</label>
+                <input type="radio" name="ratingNumber" id="number4" value="4">
+                <label for="number4" class="numberText bg-light-blue fw-bold"> 4</label>
+                <input type="radio" name="ratingNumber" id="number5" value="5">
+                <label for="number5" class="numberText bg-light-blue fw-bold"> 5</label>
+            </div>
+
+            <button onclick="rateUs()" class="form-control mt-3 bg-orange text-uppercase subBtn fw-bold py-2">submit</button>
+           
+        </div>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script>
+        function rateUs(){
+            var userChoice = document.querySelector('input[name="ratingNumber"]:checked').value;
+            localStorage.setItem("userAnswer", userChoice);
+            window.location.href="thankyou.html";
+
+        }
+    </script>
+</body>
+</html>
