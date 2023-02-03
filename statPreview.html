@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats Preview Card</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/statpreview.css">
+</head>
+<body>
+ <div class="main_card mx-lg-5 mx-2">
+    <div class="primary_card text-white rounded-3">
+        <div class="row">
+            <div class="col-lg-6 textCard order-lg-0 order-1">
+                <h1>Get <span class="txtPurple">insights</span> that help your business grow.</h1>
+                <p class="pt-lg-4 pt-3">Discover the benefit of data analytics and make better decisions regarding revenue, customer experience,
+                    and overall efficiency.
+                </p>
+
+                <div class="row pt-lg-5 pt-4 text-center">
+                  <div class="col-lg-4">
+                    <div class="numberText">
+                        <h1><span class="numbers" data-target="10">0</span>K+</h1>
+                        <p >COMPANIES</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="numberText">
+                        <h1><span class="numbers" data-target="314">0</span></h1>
+                        <p >TEMPLATES</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="numberText">
+                        <h1><span class="numbers" data-target="12">0</span>M+</h1>
+                        <p >QUERIES</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-lg-6 imgContent order-lg-1 order-0 rounded-end">
+              <img src="assets/images/image-header-desktop.jpg">
+              <div class="overlay"></div>
+            </div>
+        </div>
+      </div>
+ </div>
+
+
+ <script>
+
+var counterValue = document.querySelectorAll('.numbers');
+speed = 10;
+
+counterValue.forEach(values => {
+
+    function updateCounterValue(){
+    var old_counter_value = parseInt(values.getAttribute('data-target'));
+    var new_counter_value = parseInt(values.textContent);
+
+    if(new_counter_value < old_counter_value){
+        values.textContent  = Math.floor(new_counter_value + old_counter_value/speed);
+        setTimeout(updateCounterValue,100)
+    } else{
+        values.textContent=new_counter_value;
+    }
+
+}
+updateCounterValue();
+});
+</script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

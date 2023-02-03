@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips Calculator</title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/css/tipsCalculator.css">
+</head>
+<body>
+    <div class="container">
+        <div class="text-center pb-2"><img src="assets/images/logo.svg" alt=""></div>
+        <div class="main_container mt-5 bg-white p-4 br-15">
+           <div class="row">
+                <div class="col-lg-6 px-lg-4 order-lg-0 order-1">
+                    <div class="row">
+                        <label class="labelText">Bill <span class="float-end" id="emptyBill"></span></label>
+                        <div class="inputIcon">
+                         <img src="assets/images/icon-dollar.svg" class="icon" alt="">
+                         <input type="number" class="form-control mt-2 deenInput" placeholder="0" id="bill">
+                        </div>
+                    </div>
+                    <div class=" pt-4">
+                        <label class="labelText ">Select Tip %</label>
+                        <div class="pt-3 row ">
+                            <div class="col-lg-4 col-6 pt-lg-0 pt-0">
+                                <button value="5"  onclick="fivePercent()" class="rounded py-1  bgDarkGreenButton fw-bold fs-5">&nbsp;5%</button>
+                            </div>
+                            <div class="col-lg-4 col-6 pt-lg-0 pt-0">
+                                <button value="10"  onclick="tenPercent()" class="rounded py-1 bgDarkGreenButton fw-bold fs-5">10%</button>
+                            </div>
+                              <div class="col-lg-4 col-6 pt-lg-0 pt-3">
+                                <button value="15"  onclick="fifteenPercent()" class="rounded py-1  bgDarkGreenButton fw-bold fs-5">15%</button>
+                            </div>
+                            <div class="col-lg-4 pt-lg-3 col-6 pt-3">
+                                <button value="25" onclick="twentyFivePercent()" class="rounded py-1 bgDarkGreenButton fw-bold fs-5"> 25%</button>
+                            </div>
+                            <div class="col-lg-4  pt-lg-3 col-6 pt-3">
+                                <button value="50"  onclick="fiftyPercent()" class="rounded py-1 bgDarkGreenButton fw-bold fs-5"> 50%</button>
+                            </div>
+                              <div class="col-lg-4 pt-lg-3 col-6 pt-3">
+                                <input type="number" id="customUserPercent" onkeyup="custom()" class="py-1 deenInput fw-bold fs-6 form-control" placeholder="Custom">
+                            </div>
+                        </div>                       
+                    </div>
+                    <div class="row pt-4">
+                        <label class="labelText">Number of People <span class="float-end" id="emptyPeople"></span></label>
+                        <div class="inputIcon">
+                         <img src="assets/images/icon-person.svg" class="icon" alt="">
+                         <input type="number" class="form-control mt-2 deenInput" placeholder="0" id="people">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6 p-4 mt-lg-0 mt-5 bgDarkGreen br-15 order-0">
+                <div class="row">
+                <div class="col-5 tipText pt-lg-3 pt-2 px-lg-4 px-2">Tip Amount <br> <span class="lightText">/ person</span></div>
+                <div class="col-7"><span class="float-end fs-1 fw-bolder px-3 lightGreenText" id="tipPerPerson">$0.00</span></div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-5 tipText pt-lg-3 pt-2 px-lg-4 px-2">Total <br> <span class="lightText">/ person</span></div>
+                <div class="col-7"><span class="float-end fs-1 fw-bolder px-3 lightGreenText" id="amountPerPerson">$0.00</span></div>
+                </div>
+<button class="text-uppercase form-control fw-bold resetBTN" onclick="reset()">Reset</button>
+                </div>
+           </div>
+        </div>
+    </div>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script>
+       function tipsCalculator(percentage){
+        var bill = parseFloat(document.getElementById("bill").value);
+        var people = parseInt(document.getElementById("people").value);
+        
+        if(bill == '0' || isNaN(bill)){
+            document.getElementById("emptyBill").innerHTML ="Can't be Zero"
+            document.getElementById("emptyBill").style.color= "#d65a09"
+            document.getElementById("bill").style.borderColor="#d65a09"
+            document.getElementById("bill").focus();
+        }
+        else if (people == '0' || isNaN(people)){
+            document.getElementById("emptyPeople").innerHTML ="Can't be Zero"
+            document.getElementById("emptyPeople").style.color= "#d65a09"
+            document.getElementById("people").style.borderColor="#d65a09"
+            document.getElementById("people").focus();
+        }
+        else{
+            document.getElementById("emptyBill").innerHTML =""
+            document.getElementById("emptyPeople").innerHTML =""
+            var amount = bill / people;
+            var tips = (percentage/100) * amount;
+            var newAmount  = amount + tips;
+
+            document.getElementById("tipPerPerson").innerHTML ="$"+ tips.toFixed(2);
+            document.getElementById("amountPerPerson").innerHTML ="$" + newAmount.toFixed(2);
+        }
+       }
+     
+
+       function fivePercent(){
+        tipsCalculator(5);
+       }
+       function tenPercent(){
+        tipsCalculator(10);
+       }
+       function fifteenPercent(){
+        tipsCalculator(15);
+       }
+       function twentyFivePercent(){
+        tipsCalculator(25);
+       }
+       function fiftyPercent(){
+        tipsCalculator(50);
+       }
+
+       function custom(){
+        var userPercent = document.getElementById("customUserPercent").value;
+        tipsCalculator(userPercent);
+       }
+    
+       function reset(){
+        document.getElementById("bill").value ="";
+        document.getElementById("people").value=""
+        document.getElementById("tipPerPerson").innerHTML ="$0.00";
+            document.getElementById("amountPerPerson").innerHTML ="$0.00";
+       }
+    </script>
+   
+</body>
+</html>

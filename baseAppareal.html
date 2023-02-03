@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Apparel</title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/baseAppareal.css">
+</head>
+
+<body>
+    <div class="left_content">
+        <div class="logo mx-lg-0 mx-5"><img src="assets/images/baselogo.svg"></div>
+        <img src="assets/images/hero-mobile.jpg" class="pt-5 w-100 d-block d-sm-none"/>
+        <h1 class="lightbig greyColor">WE'RE</h1>
+        <span>COMING SOON </span>
+        <p class="greyColor pt-4 mx-4 mx-lg-0"> Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals. </p>
+        <div class="inputField mx-4 mx-lg-0">
+           <span class="float-end end-0" onclick="verification()"> <img src="assets/images/icon-arrow.svg" alt="" class="arrow"></span>
+            <input type="text" name="" id="email" class="w-100 email" placeholder="Email Address">
+            <img src="assets/images/icon-error.svg" hidden class="error" id="error"/>
+        </div>
+        <small class="text-danger errorMessage m-4" id="errorMessage"></small>
+    </div>
+
+    <div class="right_content">
+        <img src="assets/images/hero-desktop.jpg" class="hero_image h-100 float-end d-none d-sm-block">
+    </div>
+
+
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script>
+        function verification(){
+             var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            var useremail = document.getElementById('email').value;
+            if(useremail.match(validRegex)){
+                document.getElementById('error').hidden = true;
+                document.getElementById('email').style.borderColor = "#198754";
+                document.getElementById('errorMessage').innerHTML = "Valid Email Address";
+                document.getElementById('errorMessage').style.color = "#198754";
+            }
+            else{
+                document.getElementById('error').hidden = false;
+                document.getElementById('email').style.borderColor = "#DC3545";
+                document.getElementById('errorMessage').innerHTML = "Please input a valid email address";
+            }
+        }
+    </script>
+</body>
+
+</html>

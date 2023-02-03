@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    font-family: 'Space Mono', monospace;
+    background-color: hsl(185, 41%, 84%);
+
+}
+
+.container {
+    padding: 90px 180px;
+}
+
+.br-15 {
+    border-radius: 15px;
+}
+
+.bgDarkGreen{
+    background-color: hsl(183, 100%, 15%);
+}
+.lightGreenText{
+    color:hsl(172, 67%, 45%)
+}
+.labelText {
+    font-size: 13px;
+    color: hsl(183, 100%, 15%);
+    font-weight: 600;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.deenInput {
+    background-color: hsl(189, 41%, 97%);
+    border: none;
+    text-align: right;
+    color: hsl(183, 100%, 15%);
+    font-weight: 600;
+    font-size: 20px;
+    padding: 3px 15px;
+    -moz-appearance: textfield;
+}
+
+.deenInput:focus {
+    box-shadow: none;
+    border: 2px solid hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+.inputIcon {
+    position: relative;
+}
+
+.inputIcon img {
+    position: absolute;
+}
+
+.icon {
+    padding: 18px;
+    width: 50%px;
+}
+
+.bgDarkGreenButton {
+    background-color: hsl(183, 100%, 15%);
+    border: none;
+    color: hsl(189, 41%, 97%);
+    padding: 0px 35px;
+}
+.bgDarkGreenButton:focus {
+    background-color: hsl(185, 41%, 84%);
+    border: none;
+    color: hsl(183, 100%, 15%);
+    padding: 0px 35px;
+}
+.tipText{
+    font-size: 12px;
+    color:hsl(189, 41%, 97%);
+    font-weight: 600;
+}
+.lightText{
+    color: hsl(185, 41%, 84%);
+    font-weight: 200;
+    font-size: 9px;
+}
+.resetBTN{
+    background-color:  hsl(172, 67%, 45%);
+    border: none;
+    font-size: 15px;
+    color: hsl(183, 100%, 15%);
+    padding: 6px 0px;
+    margin-top: 90px;
+}
+.resetBTN:focus{
+    background-color: hsl(185, 41%, 84%);
+    border: none;
+    color: hsl(183, 100%, 15%);
+    box-shadow: none;
+}
+@media only screen and (max-width: 992px) {
+    .container {
+        padding: 60px 25px;
+    }
+    .bgDarkGreenButton {
+        background-color: hsl(183, 100%, 15%);
+        border: none;
+        color: hsl(189, 41%, 97%);
+        padding: 0px 50px;
+    }
+}
