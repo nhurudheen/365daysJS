@@ -42,7 +42,6 @@
             </div>
             <div class="col-lg-6 imgContent order-lg-1 order-0 rounded-end">
               <img src="assets/images/image-header-desktop.jpg">
-              <div class="overlay"></div>
             </div>
         </div>
       </div>
@@ -50,26 +49,25 @@
 
 
  <script>
+    var userCounter = document.querySelectorAll('.numbers');
+    var speed = 10;
 
-var counterValue = document.querySelectorAll('.numbers');
-speed = 10;
+    userCounter.forEach(values => {
+        function updateUserCounter(){
+            var old_number = parseInt(values.getAttribute('data-target'));
+            var new_number = parseInt(values.textContent)
 
-counterValue.forEach(values => {
+            if(new_number  < old_number){
+                values.textContent = Math.floor(new_number + old_number / speed);
+                setTimeout(updateUserCounter,100)
+            }
+            else{
+                values.textContent = new_number;
+            }
+        }
 
-    function updateCounterValue(){
-    var old_counter_value = parseInt(values.getAttribute('data-target'));
-    var new_counter_value = parseInt(values.textContent);
-
-    if(new_counter_value < old_counter_value){
-        values.textContent  = Math.floor(new_counter_value + old_counter_value/speed);
-        setTimeout(updateCounterValue,100)
-    } else{
-        values.textContent=new_counter_value;
-    }
-
-}
-updateCounterValue();
-});
+        updateUserCounter();
+    });
 </script>
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

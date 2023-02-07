@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400&display=swap');
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: hsl(233, 47%, 7%);
+    margin: 50px;
+}
+.container{
+    background-color: hsl(244, 38%, 16%);
+    border-radius: 10px;
+    box-shadow: 5px 5px #FFFFFF;
+}
+.text-blue{
+    color: hsl(244, 38%, 16%);
+}
+.cardImg{
+    padding-top:10px;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    background-size:fill;
+}
+.title{
+    font-size: 20px;
+    font-weight: 700;
+}
+.language{
+    font-size: 15px;
+    margin-top: -10px;    
+}
+.week{
+    font-weight: 600;
+}
+.viewMore{
+    border:none ;
+    font-size: 13px;
+}
+.viewMore:hover{
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 992px){
+    body{
+        margin:20px
+    }
+    .cardImg{
+        height: 150px;
+        width: 120px;
+        position: relative;
+        background-size:fill;
+    }
+    .title{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .language{
+        font-size: 13px;
+        margin-top: -10px;    
+    }
+    .week{
+        font-weight: 600;
+    }
+}
