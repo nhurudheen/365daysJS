@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Raleway:wght@400;500;600;700&display=swap');
+body{
+    background-color: hsl(217, 28%, 15%);
+    font-family: 'Raleway', sans-serif;
+    color: #FFF;
+}
+.header img{
+    height: 40px;
+}
+.generalLink a{
+  margin-left: 40px;
+  text-decoration: none;
+  font-size: 12px;
+}
+.generalLink a:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.banner{
+    padding-top: 150px;
+    text-align: center;
+}
+
+.banner img{
+    height: 100%;
+    width: 50%;
+}
+.banner h3{
+    padding: 0px 250px;
+}
+.waveImage{
+    background-image: url(../images/bg-curvy-desktop.svg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+.waveImage p{
+    padding: 30px 400px 0px 400px;
+}
+
+.waveImage button{
+    border-radius: 50px;
+    border: none;
+    padding: 10px 65px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFF;
+    background-color: hsl(198, 60%, 50%);
+    margin-top: 10px;
+    margin-bottom: 150px;
+}
+.waveImage button:hover{
+    color: #FFF;
+    background-color: hsl(176, 68%, 64%)
+}
+.main_files{
+    background-color: hsl(218, 28%, 13%);
+}
+.files{
+    margin: 0px 160px;
+}
+.content{
+    padding: 0px 90px 50px 90px;
+}
+.content p{
+    font-size: 12px;
+}
+@media only screen and (max-width:992px) {
+    .header img{
+        height: 25px;
+    }   
+    
+    .container {
+        padding: 0px 20px;
+    }
+    .generalLink a{
+        margin-left: 15px;
+        text-decoration: none;
+        font-size: 15px;
+      }
+      .banner {
+        padding: 100px 20px 20px 0px;
+      }
+      .banner img{
+        height: 50%;
+        width: 100%;
+
+    }
+    .banner h3{
+        padding: 0px 0px;
+    }
+    .waveImage{
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .waveImage p{
+        padding: 3px 30px;
+    }
+    .main_files{
+        background-color: hsl(218, 28%, 13%);
+    }
+    .files{
+        margin: 80px 0px;
+    }
+    .content{
+        padding: 50px 20px;
+    }
+    .content p{
+        font-size: 12px;
+    }
+    
+}
