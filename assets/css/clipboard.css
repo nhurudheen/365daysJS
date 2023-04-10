@@ -122,6 +122,9 @@ body {
     color: hsl(171, 66%, 44%);
     cursor: pointer;
 }
+.socialmedia svg:hover path{
+    fill: hsl(171, 66%, 44%);
+}
 @media only screen and (max-width: 992px) {
     .header {
         background-image: url(../images/bg-header-mobile.png);
