@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="turnOn">Turn On</button>
+    <p id="bulb">Bulb</p>
+    <button id="turnOff"> Turn Off</button>
+<br>
+    <input type="text" name="amount" id="" class="number" >
+    <br>
+    <input type="text" name="price" id="" class="number"/>
+    <script>
+        const turnOn = document.getElementById('turnOn');
+        const turnOff = document.getElementById('turnOff');
+        const bulb = document.getElementById('bulb')
+
+        turnOn.addEventListener('click', function(){
+            bulb.style.color='red';
+            bulb.style.fontSize='100px'
+        })
+        turnOff.addEventListener('click', function(){
+            bulb.style.color='black';
+            bulb.style.fontSize='20px'
+        })
+
+        const userDetails = {
+            firstName : "Nurudeen",
+            lastName :"Faniyi",
+            age : "30",
+        }
+        const userItems = ["Cars","Building", "Laptop"]
+        console.log(userItems.length)
+        console.log(userItems[userItems.length-1])
+        const greetUserItems = userItems.map(
+            function (values){
+                return "Hello "+values;
+            }
+        )
+        console.log(greetUserItems)
+        console.log("hello " + userDetails.firstName)
+
+        const response = {
+            "status_code": "0",
+            "data": [
+                {
+                    "firstname": "John",
+                    "id": "2"
+                },
+                {
+                    "firstname": "Jane",
+                    "id": "3"
+                }
+            ]
+        };
+
+        response.data.forEach(
+            function(values){
+               console.log("Hello " + values.firstname) 
+            }
+        )
+        response.data.forEach(
+            (values)=>(
+                console.log("How are you " + values.firstname)
+            )
+        )
+
+        //Convert Number to be comma delimiter 
+        document.querySelectorAll('.number').forEach(
+            (values)=>{
+                values.addEventListener('keyup', ()=>{
+                    const removeString = values.value.replace(/[^0-9.]/g, '');
+                    const convertToDigit =parseFloat(removeString)
+                    if(!isNaN(convertToDigit)){
+                        values.value = convertToDigit.toLocaleString('en-US')
+                    }
+                    else{
+                        values.value = '';
+                    }
+                })
+            }
+        )
+    //     var i =10;
+    //    while(i<10){
+    //     console.log("deen")
+    //    }
+    </script>
+</body>
+</html>
