@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hello</p>
+    <p id="userDate">2023-09-17</p>
+    <button id="btnDate">Get Date</button> <br>
+    <p id="resultDate"></p>
+
+    <script>
+        function displayResult(userResult){
+            console.log(userResult);
+        }
+        var [a,b] = [5,6];
+        function addition(x,y, callBack){
+            let sum= x+y;
+            callBack(sum)
+        }
+        addition(a,b,displayResult)
+
+        let intervalId;
+        function remainingDate(){
+            var userDate = new Date(document.getElementById('userDate').innerHTML +"T22:04");
+            const todayDate = new Date();
+            const timeDifference = userDate - todayDate;
+            var result = document.getElementById('resultDate')
+            if(timeDifference<=0){
+                result.innerHTML = "Times Up"
+                clearInterval(intervalId)
+                return
+            }
+            const day = Math.floor(timeDifference/ (1000*24*60*60))
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+            result.innerHTML = `${day} days : ${hours} hours : ${minutes} minutes : ${seconds} seconds`;
+        }
+       intervalId = setInterval(remainingDate, 1000)
+    </script>
+</body>
+</html>

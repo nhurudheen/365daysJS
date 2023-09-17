@@ -10,7 +10,8 @@
     <p id="bulb">Bulb</p>
     <button id="turnOff"> Turn Off</button>
 <br>
-    <input type="text" name="amount" id="" class="number" >
+    <input type="text" name="amount" placeholder="Enter your Age" id="userAge" class="number" > <button id="checkAge">Check My Age Bracket</button>
+    <p id="ageBracket"></p>
     <br>
     <input type="text" name="price" id="" class="number"/>
     <script>
@@ -42,7 +43,7 @@
         )
         console.log(greetUserItems)
         console.log("hello " + userDetails.firstName)
-
+            // debugger; // Similar to Die in php
         const response = {
             "status_code": "0",
             "data": [
@@ -57,11 +58,12 @@
             ]
         };
 
-        response.data.forEach(
+        response.data.map(
             function(values){
                console.log("Hello " + values.firstname) 
             }
         )
+        //When using map, it means you are iterating over the element of the array object to create another array
         response.data.forEach(
             (values)=>(
                 console.log("How are you " + values.firstname)
@@ -83,10 +85,29 @@
                 })
             }
         )
-    //     var i =10;
-    //    while(i<10){
-    //     console.log("deen")
-    //    }
+        var i =0;
+       do{
+        console.log("Freedom")
+        i++
+       }
+       while(i<10)
+       //Try and Catch
+       document.getElementById('checkAge').addEventListener('click', ()=>{
+        var age = document.getElementById('userAge').value;
+        var message;
+        try{
+            if(age >18) throw "You are an Adult" 
+            if(age < 18) throw "You are a teenager"
+        }
+        catch(err){
+            message = err;
+        }
+        finally{
+            document.getElementById('ageBracket').innerHTML =message + " cos the age you input is "+age;
+        }
+       })
+
+
     </script>
 </body>
 </html>
