@@ -14,6 +14,13 @@
     <p id="ageBracket"></p>
     <br>
     <input type="text" name="price" id="" class="number"/>
+
+    <select name="state" id="state">
+        <option value="abia">Abia</option>
+        <option value="umua">Umayah</option>
+    </select>
+
+
     <script>
         const turnOn = document.getElementById('turnOn');
         const turnOff = document.getElementById('turnOff');
@@ -108,6 +115,14 @@
        })
 
 
+    </script>
+
+    <script>
+        const stateSelect = document.getElementById('state');
+        stateSelect.addEventListener('change', ()=>{
+            const stateSelectedId = stateSelect.value;
+            console.log(stateSelectedId)
+        })
     </script>
 </body>
 </html>
